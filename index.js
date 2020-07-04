@@ -10,6 +10,10 @@ const articleRouter = require(path.join(__dirname,'./routers/article.js'))
 // 2、创建express实例
 const app = express()
 
+// 处理静态资源服务
+// 静态资源服务参数一表示静态资源访问是需要添加一层路径
+app.use('/uploads',express.static('uploads'))
+
 // 处理客户端请求参数
 // for parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }))
